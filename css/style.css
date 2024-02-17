@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* Reset styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set default font size to 20px */
+html {
+  font-size: 20px;
+}
+
+/* Layout */
+body {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    ". main .";
+  grid-template-columns: 1.5fr 2fr 1.5fr;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Header */
+header {
+  grid-area: header;
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+h1 a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Main */
+main {
+  grid-area: main;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section */
+section {
+  max-width: 80%;
+  min-width: 480px;
+}
+
+/* Create post */
+.create-post {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.create-post a,
+input[type="submit"] {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.posts:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+/* Post */
+article {
+  border-top: 1px solid #ccc;
+  padding: 1rem 0;
+}
+
+article h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+article h3 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+article h4 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.date {
+  color: rgb(153, 153, 153);
+}
+
+video,
+img {
+  max-height: 20rem;
+  max-width: 100%;
+  border-radius: 0.75rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  margin-top: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* New Post */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+textarea {
+  min-height: 15rem;
+  padding: 0.5rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.input-group input {
+  padding: 0.5rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  flex-grow: 1;
+}
+
+input[type="file"] {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+::file-selector-button {
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  body {
+    grid-template-areas:
+      "header"
+      "main";
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    text-align: center;
+    position: static;
+  }
+
+  main {
+    margin-top: 1rem;
+  }
+
+  section {
+    min-width: 0;
+    max-width: 90%;
+  }
+}
